@@ -9,3 +9,5 @@ for i in range(50):
         marks[a] = []
         marks[a].append(randint(2,5))
 print(marks)
+
+#рандомно добавлять оценки к именам в виде словаря
