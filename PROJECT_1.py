@@ -20,11 +20,12 @@ spisok = set(spisok)
 
 tovar1 = ['', 0]
 tovar = input('Введите необходимый товар: ')
-if tovar not in spisok:
-    print('Такого товара нет!')
-for i in shops:
-    for j in range(len(shops_l[i])):
-        if shops_l[i][j][0] == tovar and shops_l[i][j][1] > tovar1[1]:
-            tovar1[0] = i
-            tovar1[1] = shops_l[i][j][1]
-print(f'Больше всего товара в магазине {tovar1[0]},количество - {tovar1[1]}')
+while tovar != 0:
+    if tovar not in spisok:
+        print('Такого товара нет!')
+    for i in shops:
+        for j in range(len(shops_l[i])):
+            if shops_l[i][j][0] == tovar and shops_l[i][j][1] > tovar1[1]:
+                tovar1[0] = i
+                tovar1[1] = shops_l[i][j][1]
+    print(f'Больше всего товара в магазине {tovar1[0]},количество - {tovar1[1]}')
