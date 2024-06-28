@@ -19,8 +19,9 @@ for i in range(number):
 spisok = set(spisok)
 
 tovar1 = ['', 0]
-tovar = input('Введите необходимый товар: ')
+tovar = ''
 while tovar != 0:
+    tovar = input('Введите необходимый товар: ')
     if tovar not in spisok:
         print('Такого товара нет!')
     for i in shops:
