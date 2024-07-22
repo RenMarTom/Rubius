@@ -41,3 +41,13 @@ class Mage(NPC):
             return damage
         else:
             print(f'У мага {self.name} закончилась мана')
+
+
+mirn = NPC('Дядя Дима', 15)
+sword = Sword_Man('Сталь',100,10,30)
+mag = Mage('Инвокер',50,8)
+
+order = [mirn, mag, sword, mag]
+for hero in order:
+    print(hero)
+    hero.attack()
