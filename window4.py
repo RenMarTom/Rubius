@@ -46,7 +46,7 @@ class MainWindow(QMainWindow):
         self.mainL.addWidget(self.button2)
 
         self.main.setLayout(self.mainL)
-        self.main.setFixedHeight(100)
+        # self.main.setFixedHeight(100)
 
         self.setCentralWidget(self.main)
 
