@@ -107,3 +107,23 @@ class MainWindow(QMainWindow):
 
     def set_data(self, items):
         x = 0
+        y = 0
+        for row_items in items:
+            for col_item in row_items:
+                table_item = QTableWidgetItem(str(col_item))
+                self.table.setItem(y, x, table_item)
+                x += 1
+            x = 0
+            y += 1
+
+    def clear(self):
+        self.file_name.clear()
+        self.secret_file_name.clear()
+        self.text.clear()
+
+
+if __name__ == '__main__':
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
