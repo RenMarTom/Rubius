@@ -43,4 +43,72 @@ class MainWindow(QMainWindow):
         self.check1.clicked.connect(self.first)
         self.check2.clicked.connect(self.second)
         self.check3.clicked.connect(self.third)
-        self.check4.clicked.connect(self.fourth
+        self.check4.clicked.connect(self.fourth)
+
+        self.check_boxL.addWidget(self.check1)
+        self.check_boxL.addWidget(self.check2)
+        self.check_boxL.addWidget(self.check3)
+        self.check_boxL.addWidget(self.check4)
+        self.check_box.setLayout(self.check_boxL)
+
+        self.boxL.addWidget(self.radio_buttons)
+        self.boxL.addWidget(self.check_box)
+
+        self.radio_buttons.setLayout(self.radio_buttonsL)
+
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setMinimum(0)
+        self.progress_bar.setMaximum(10)
+        self.progress_bar.setValue(self.value)
+
+
+        self.MainL.addLayout(self.boxL)
+        self.MainL.addWidget(self.progress_bar)
+
+        self.Main.setLayout(self.MainL)
+        self.setCentralWidget(self.Main)
+
+    def red(self):
+        self.Main.setStyleSheet("QWidget{background-color: #ff5555}")
+
+    def green(self):
+        self.Main.setStyleSheet("QWidget{background-color: #55ff55}")
+
+    def blue(self):
+        self.Main.setStyleSheet("QWidget{background-color: #5555ff}")
+
+    def first(self):
+        if self.check1.isChecked():
+            self.value += 1
+        else:
+            self.value -= 1
+        self.progress_bar.setValue(self.value)
+
+    def second(self):
+        if self.check2.isChecked():
+            self.value += 2
+        else:
+            self.value -= 2
+        self.progress_bar.setValue(self.value)
+
+    def third(self):
+        if self.check3.isChecked():
+            self.value += 3
+        else:
+            self.value -= 3
+        self.progress_bar.setValue(self.value)
+
+    def fourth(self):
+        if self.check4.isChecked():
+            self.value += 4
+        else:
+            self.value -= 4
+        self.progress_bar.setValue(self.value)
+
+
+
+if __name__ == '__main__':
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())
