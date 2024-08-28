@@ -18,8 +18,6 @@ async def cmd_buttons(message: types.Message):
     un = message.from_user.username
     dict[un] = [0, 0, '', 0]
     await message.answer(text='working...', reply_markup=keyboard)
-    dict[un][0] = 0
-    dict[un][1] = 0
 
 
 @dp.message(Command('equal'))
