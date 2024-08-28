@@ -1,7 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
-from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 a = 0
 b = 0
